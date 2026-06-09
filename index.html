@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parche BetPlay – Gana</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ===== NAV ===== -->
+    <nav class="nav">
+        <div class="nav__wrap">
+            <div class="nav__brand">
+                <img src="assets/images/logo-betplay-gana.png" alt="BetPlay Gana" class="nav__logo">
+            </div>
+            <ul class="nav__links">
+                <li><a href="#eventos" class="nav__link nav__link--active">Próximos Eventos</a></li>
+                <li><a href="#beneficios" class="nav__link">Beneficios</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="inicio">
+        <!-- Players layer — behind all content -->
+        <div class="hero__players-layer" aria-hidden="true">
+            <img
+                src="assets/images/hero-football-players.png"
+                alt=""
+                class="hero__players-img"
+            >
+        </div>
+
+        <div class="hero__wrap">
+            <!-- Left: headline + description -->
+            <div class="hero__copy">
+                <h1 class="hero__title">
+                    ÚNETE<br>
+                    AL PARCHE<br>
+                    BETPLAY ES GANA
+                </h1>
+                <p class="hero__desc">
+                    Regístrate para ser el primero en enterarte de nuestros próximos eventos, sorteos y experiencias exclusivas en tu ciudad.
+                </p>
+                <!-- Texto dinámico de ciudad -->
+                <p class="hero__city">medellin</p>
+            </div>
+
+            <!-- Right: registration form card -->
+            <div class="hero__form-col">
+                <div class="form-card">
+                    <h2 class="form-card__title">Únete al Parche</h2>
+                    <form id="heroForm" class="form-card__form" novalidate>
+                        <input
+                            class="form-card__input"
+                            type="text"
+                            name="nombre"
+                            placeholder="Nombre completo"
+                            required
+                        >
+                        <input
+                            class="form-card__input"
+                            type="text"
+                            name="cedula"
+                            placeholder="Cédula"
+                            required
+                            inputmode="numeric"
+                        >
+                        <input
+                            class="form-card__input"
+                            type="email"
+                            name="email"
+                            placeholder="Correo electrónico"
+                            required
+                        >
+                        <input
+                            class="form-card__input"
+                            type="tel"
+                            name="telefono"
+                            placeholder="Número telefónico"
+                            required
+                        >
+                        <label class="form-card__check">
+                            <input type="checkbox" name="terminos" required>
+                            <span class="form-card__checkmark"></span>
+                            <span class="form-card__check-text">
+                                Acepto política de tratamiento de datos y T&amp;C (Grupo Bedoya)
+                            </span>
+                        </label>
+                        <button type="submit" class="form-card__btn">Registrarme ahora</button>
+                        <p class="form-card__success" id="heroFormOk">
+                            ¡Registro exitoso! Te contactaremos pronto.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EVENTOS ACTIVOS ===== -->
+    <section class="events" id="eventos">
+        <div class="events__wrap">
+            <h2 class="events__heading">Eventos Activos del Mes</h2>
+            <div class="events__grid">
+                <article class="ecard">
+                    <div class="ecard__img ecard__img--mundial">
+                        <!-- Texto pendiente por confirmar según imagen de referencia -->
+                        <p class="ecard__img-label">EXPERIENCIA<br>MUNDIALISTA</p>
+                    </div>
+                    <div class="ecard__body">
+                        <p class="ecard__title">Experiencia mundialista</p>
+                        <a href="#" class="ecard__btn">Registrate y gana</a>
+                    </div>
+                </article>
+                <article class="ecard">
+                    <div class="ecard__img ecard__img--polla">
+                        <!-- Texto pendiente por confirmar según imagen de referencia -->
+                        <p class="ecard__img-label ecard__img-label--polla">POLLA</p>
+                    </div>
+                    <div class="ecard__body">
+                        <p class="ecard__title">La polla</p>
+                        <a href="#" class="ecard__btn">Registrate y gana</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ¿POR QUÉ REGISTRARTE? ===== -->
+    <section class="benefits" id="beneficios">
+        <div class="benefits__wrap">
+            <h2 class="benefits__heading">¿Por qué registrarte?</h2>
+            <div class="benefits__grid">
+
+                <div class="bitem">
+                    <div class="bitem__icon" aria-hidden="true">
+                        <svg viewBox="0 0 50 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="35" width="44" height="5" rx="1" fill="white"/>
+                            <path d="M3 31L11 9L25 22L39 3L47 7L42 31H3Z" fill="white"/>
+                            <circle cx="3" cy="9" r="3.5" fill="white"/>
+                            <circle cx="47" cy="7" r="3.5" fill="white"/>
+                            <circle cx="25" cy="3" r="3.5" fill="white"/>
+                        </svg>
+                    </div>
+                    <p class="bitem__label">Acceso VIP</p>
+                </div>
+
+                <div class="bitem">
+                    <div class="bitem__icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="4" y="19" width="40" height="6" rx="1" fill="white"/>
+                            <rect x="6" y="25" width="36" height="18" rx="2" fill="white"/>
+                            <rect x="21" y="15" width="6" height="10" fill="white"/>
+                            <path d="M24 15C24 15 15 14 15 7C15 0 24 0 24 0" stroke="white" stroke-width="3" stroke-linecap="round" fill="none"/>
+                            <path d="M24 15C24 15 33 14 33 7C33 0 24 0 24 0" stroke="white" stroke-width="3" stroke-linecap="round" fill="none"/>
+                        </svg>
+                    </div>
+                    <p class="bitem__label">Sorteos exclusivos</p>
+                </div>
+
+                <div class="bitem">
+                    <div class="bitem__icon" aria-hidden="true">
+                        <svg viewBox="0 0 52 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="4" width="40" height="26" rx="3" fill="white"/>
+                            <rect x="6" y="8" width="32" height="18" fill="#050c14"/>
+                            <rect x="10" y="13" width="24" height="8" rx="1" fill="white"/>
+                            <rect x="8" y="32" width="10" height="6" rx="1" fill="white"/>
+                            <rect x="22" y="32" width="10" height="6" rx="1" fill="white"/>
+                            <rect x="36" y="32" width="10" height="6" rx="1" fill="white"/>
+                        </svg>
+                    </div>
+                    <p class="bitem__label">Bonos Betplay</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer__wrap">
+            <div class="footer__brand">
+                <img src="assets/images/logo-betplay-gana.png" alt="BetPlay Gana" class="footer__logo">
+            </div>
+            <p class="footer__copy">
+                © 2025 Grupo Bedoya | BetPlay | Todos los derechos reservados. |
+                <a href="#">Políticas de Privacidad</a> |
+                <a href="#">Términos y Condiciones</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

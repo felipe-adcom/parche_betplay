@@ -1,0 +1,835 @@
+/* ============================================================
+   FONTS — MadeOuterSans
+   ============================================================ */
+@font-face {
+    font-family: 'MadeOuterSans';
+    src: url('assets/fonts/made-outer-sans-bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'MadeOuterSans';
+    src: url('assets/fonts/made-outer-sans-thin.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ============================================================
+   RESET
+   ============================================================ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: 'MadeOuterSans', Arial, sans-serif;
+    font-weight: 300;
+    background-color: #07131f;
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+button,
+input {
+    font-family: inherit;
+    outline: none;
+}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav {
+    position: relative;
+    z-index: 50;
+    background-color: #070f1a;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.nav__wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav__brand {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.nav__logo {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+}
+
+.nav__links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav__link {
+    font-family: 'MadeOuterSans', Arial, sans-serif;
+    font-weight: 300;
+    font-size: 12.5px;
+    color: rgba(255, 255, 255, 0.85);
+    white-space: nowrap;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s;
+    letter-spacing: 0.2px;
+}
+
+.nav__link--active,
+.nav__link:hover {
+    border-bottom-color: #c8e600;
+}
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+.hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
+        170deg,
+        #06111e 0%,
+        #091929 18%,
+        #0b2038 36%,
+        #0d2645 52%,
+        #0c2340 65%,
+        #081b30 78%,
+        #061423 90%,
+        #050f1a 100%
+    );
+    min-height: 440px;
+}
+
+/* ---- Subtle stadium texture overlay ---- */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        ellipse 80% 60% at 30% 70%,
+        rgba(10, 60, 20, 0.18) 0%,
+        transparent 70%
+    );
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* ---- Football players — absolutely positioned background element ---- */
+.hero__players-layer {
+    position: absolute;
+    left: -20px;
+    bottom: 0;
+    width: 56%;
+    max-width: 600px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero__players-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: bottom left;
+}
+
+/* ---- Inner flex row ---- */
+.hero__wrap {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 44px 40px 52px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    min-height: 440px;
+}
+
+/* ---- Left column: headline + description ---- */
+.hero__copy {
+    flex: 0 0 48%;
+    padding-top: 8px;
+}
+
+/* ---- Headline ---- */
+.hero__title {
+    font-family: 'MadeOuterSans', Arial, sans-serif;
+    font-weight: 700;
+    font-size: clamp(36px, 5.8vw, 72px);
+    line-height: 0.98;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+/* ---- Description ---- */
+.hero__desc {
+    font-family: 'MadeOuterSans', Arial, sans-serif;
+    font-weight: 300;
+    font-size: clamp(11.5px, 1.2vw, 14px);
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.6;
+    max-width: 290px;
+    margin-bottom: 10px;
+}
+
+/* ---- Dynamic city name ---- */
+.hero__city {
+    font-family: 'MadeOuterSans', Arial, sans-serif;
+    font-weight: 700;
+    font-size: clamp(14px, 1.6vw, 18px);
+    color: #e53935;
+    text-transform: lowercase;
+}
+
+/* ---- Right column: form card ---- */
+.hero__form-col {
+    flex: 0 0 auto;
+    width: 46%;
+    max-width: 288px;
+}
+
+/* ============================================================
+   FORM CARD
+   ============================================================ */
+.form-card {
+    border: 1px solid rgba(255, 255, 255, 0.78);
+    background: rgba(4, 11, 22, 0.72);
+    padding: 22px 18px 20px;
+}
+
+.form-card__title {
+    font-family: 'MadeOuterSans', Arial, sans-serif;
+    font-weight: 300;
+    font-size: 15.5px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 16px;
+    letter-spacing: 0.2px;
+}
+
+.form-card__form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Text / email / tel inputs */
+.form-card__input {
+    display: block;
+    width: 100%;
+    height: 36px;
+    padding: 0 10px;
+    background-color: rgba(236, 242, 250, 0.93);
+    border: none;
+    border-radius: 2px;
+    color: #1a2640;
+    font-family: 'MadeOuterSans', Arial, sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    transition: background-color 0.15s, box-shadow 0.15s;
+}
+
+.form-card__input::placeholder {
+    color: rgba(30, 50, 80, 0.55);
+}
+
+.form-card__input:focus {
+    background-color: #ffffff;
+    box-shadow: 0 0 0 2px rgba(200, 230, 0, 0.45);
+}
+
+.form-card__input.is-error {
+    box-shadow: 0 0 0 2px rgba(229, 57, 53, 0.7);
+}
+
+/* ---- Checkbox row ---- */
+.form-card__check {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    cursor: pointer;
+    margin-top: 2px;
+}
+
+.form-card__check input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.form-card__checkmark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 15px;
+    height: 15px;
+    margin-top: 1px;
+    background-color: rgba(236, 242, 250, 0.93);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.form-card__check input[type="checkbox"]:checked ~ .form-card__checkmark {
+    background-color: #1565c0;
+    border-color: #1565c0;
+}
+
+.form-card__check input[type="checkbox"]:checked ~ .form-card__checkmark::after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 7px;
+    border: 1.5px solid #ffffff;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.form-card__check input[type="checkbox"].is-error ~ .form-card__checkmark {
+    border-color: #e53935;
+}
+
+.form-card__check-text {
+    font-family: 'MadeOuterSans', Arial, sans-serif;
+    font-weight: 300;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.68);
+    line-height: 1.45;
+}
+
+/* ---- Submit button ---- */
+.form-card__btn {
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin-top: 4px;
+    background-color: #ffffff;
+    color: #0b1a2e;
+    border: none;
+    border-radius: 2px;
+    font-family: 'MadeOuterSans', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.form-card__btn:hover {
+    background-color: #e8effc;
+}
+
+.form-card__btn:active {
+    transform: scale(0.99);
+}
+
+/* ---- Success message ---- */
+.form-card__success {
+    display: none;
+    padding: 10px 12px;
+    background-color: rgba(0, 170, 75, 0.18);
+    border: 1px solid rgba(0, 200, 90, 0.45);
+    border-radius: 2px;
+    font-family: 'MadeOuterSans', Arial, sans-serif;
+    font-weight: 300;
+    font-size: 11.5px;
+    color: #00e676;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.form-card__success.is-visible {
+    display: block;
+}
+
+/* ============================================================
+   EVENTOS ACTIVOS DEL MES
+   ============================================================ */
+.events {
+    background: linear-gradient(
+        180deg,
+        #081626 0%,
+        #091b2e 35%,
+        #0b1f34 70%,
+        #09192b 100%
+    );
+    padding: 52px 32px 60px;
+}
+
+.events__wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.events__heading {
+    font-family: 'MadeOuterSans', Arial, sans-serif;
+    font-weight: 700;
+    font-size: clamp(20px, 3.2vw, 28px);
+    color: #ffffff;
+    margin-bottom: 36px;
+}
+
+.events__grid {
+    display: flex;
+    gap: 22px;
+    justify-content: center;
+}
+
+/* ---- Event card ---- */
+.ecard {
+    flex: 0 0 calc(50% - 11px);
+    max-width: 300px;
+    min-width: 150px;
+    background-color: #0c1b2c;
+    border-radius: 3px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.ecard__img {
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Experiencia Mundialista — yellow/gold */
+.ecard__img--mundial {
+    background: linear-gradient(
+        145deg,
+        #f0c000 0%,
+        #f7d200 25%,
+        #e8b800 55%,
+        #d4a200 85%,
+        #c09000 100%
+    );
+}
+
+/* La Polla — dark space/night */
+.ecard__img--polla {
+    background: linear-gradient(
+        145deg,
+        #04091a 0%,
+        #070e28 30%,
+        #0b1540 60%,
+        #060d20 100%
+    );
+}
+
+.ecard__img-label {
+    font-family: 'MadeOuterSans', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    line-height: 1.15;
+    text-align: center;
+    color: #000000;
+    letter-spacing: 0.5px;
+    padding: 0 12px;
+}
+
+.ecard__img-label--polla {
+    color: #ffffff;
+    font-size: 26px;
+    letter-spacing: 6px;
+}
+
+.ecard__body {
+    padding: 16px 14px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.ecard__title {
+    font-family: 'MadeOuterSans', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.ecard__btn {
+    display: block;
+    width: 100%;
+    padding: 11px 8px;
+    background-color: #ffffff;
+    color: #0b1a2e;
+    font-family: 'MadeOuterSans', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.ecard__btn:hover {
+    background-color: #e8effc;
+}
+
+/* ============================================================
+   ¿POR QUÉ REGISTRARTE?
+   ============================================================ */
+.benefits {
+    background-color: #050c14;
+    padding: 60px 32px 68px;
+}
+
+.benefits__wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.benefits__heading {
+    font-family: 'MadeOuterSans', Arial, sans-serif;
+    font-weight: 700;
+    font-size: clamp(22px, 3.4vw, 32px);
+    color: #00cfcf;
+    margin-bottom: 52px;
+}
+
+.benefits__grid {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.bitem {
+    flex: 0 0 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.bitem__icon {
+    width: 52px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bitem__icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.bitem__label {
+    font-family: 'MadeOuterSans', Arial, sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+    background-color: #040a10;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    padding: 14px 32px;
+}
+
+.footer__wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer__brand {
+    flex-shrink: 0;
+}
+
+.footer__logo {
+    height: 26px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer__copy {
+    font-family: 'MadeOuterSans', Arial, sans-serif;
+    font-weight: 300;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.38);
+    line-height: 1.7;
+    flex: 1;
+}
+
+.footer__copy a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-color: rgba(255, 255, 255, 0.2);
+}
+
+.footer__copy a:hover {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+/* ============================================================
+   RESPONSIVE — 1200px
+   ============================================================ */
+@media (max-width: 1200px) {
+    .hero__wrap {
+        padding: 40px 32px 48px;
+    }
+
+    .hero__players-layer {
+        width: 52%;
+    }
+
+    .hero__copy {
+        flex: 0 0 50%;
+    }
+
+    .hero__form-col {
+        width: 44%;
+        max-width: 280px;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE — 992px
+   ============================================================ */
+@media (max-width: 992px) {
+    .nav__wrap {
+        padding: 0 24px;
+    }
+
+    .hero__wrap {
+        padding: 36px 24px 44px;
+        gap: 20px;
+    }
+
+    .hero__players-layer {
+        width: 50%;
+    }
+
+    .hero__copy {
+        flex: 0 0 50%;
+    }
+
+    .hero__form-col {
+        width: 46%;
+        max-width: 270px;
+    }
+
+    .form-card {
+        padding: 20px 16px 18px;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE — 768px
+   ============================================================ */
+@media (max-width: 768px) {
+    /* Nav */
+    .nav__wrap {
+        padding: 0 20px;
+        height: 48px;
+    }
+
+    .nav__links {
+        gap: 20px;
+    }
+
+    .nav__link {
+        font-size: 11.5px;
+    }
+
+    /* Hero: stack vertically */
+    .hero {
+        min-height: auto;
+    }
+
+    .hero__players-layer {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        width: 82%;
+        max-width: 400px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .hero__wrap {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px 40px;
+        min-height: auto;
+        gap: 0;
+    }
+
+    .hero__copy {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 480px;
+        padding-top: 0;
+        text-align: left;
+        order: 2;
+        margin-top: 20px;
+    }
+
+    .hero__desc {
+        max-width: 100%;
+    }
+
+    .hero__form-col {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 480px;
+        order: 3;
+        margin-top: 24px;
+    }
+
+    /* Events */
+    .events {
+        padding: 44px 20px 52px;
+    }
+
+    .events__grid {
+        gap: 14px;
+    }
+
+    .ecard {
+        flex: 0 0 calc(50% - 7px);
+        min-width: 140px;
+    }
+
+    /* Benefits */
+    .benefits {
+        padding: 52px 20px 60px;
+    }
+
+    .benefits__grid {
+        gap: 28px;
+    }
+
+    .bitem {
+        flex: 0 0 120px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 14px 20px;
+    }
+
+    .footer__wrap {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .footer__copy {
+        text-align: center;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE — 480px
+   ============================================================ */
+@media (max-width: 480px) {
+    .nav__links {
+        gap: 14px;
+    }
+
+    .nav__link {
+        font-size: 11px;
+    }
+
+    .hero__players-layer {
+        width: 95%;
+    }
+
+    .hero__title {
+        font-size: clamp(28px, 9vw, 40px);
+    }
+
+    .events__grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .ecard {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .benefits__grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 36px;
+    }
+
+    .bitem {
+        flex: 0 0 auto;
+        width: 160px;
+    }
+}
