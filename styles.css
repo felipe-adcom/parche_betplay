@@ -66,6 +66,68 @@ input {
 }
 
 /* ============================================================
+   LOGO COMPONENT (SVG inline — nav, event card, footer)
+   ============================================================ */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.logo__mark {
+    width: 19px;
+    height: 24px;
+    flex-shrink: 0;
+    display: block;
+}
+
+.logo__betplay {
+    font-family: 'MadeOuterSans', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: #ffffff;
+    letter-spacing: -0.2px;
+    line-height: 1;
+}
+
+.logo__sep {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.4);
+    line-height: 1;
+    margin: 0 1px;
+}
+
+.logo__gana {
+    font-family: 'MadeOuterSans', Arial, sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    color: #ffffff;
+    letter-spacing: 0.8px;
+    line-height: 1;
+}
+
+/* Small variant — polla event card */
+.logo--sm .logo__mark {
+    width: 13px;
+    height: 16px;
+}
+
+.logo--sm .logo__betplay {
+    font-size: 11px;
+}
+
+/* Footer variant */
+.logo--footer .logo__mark {
+    width: 16px;
+    height: 20px;
+}
+
+.logo--footer .logo__betplay,
+.logo--footer .logo__gana {
+    font-size: 13px;
+}
+
+/* ============================================================
    NAV
    ============================================================ */
 .nav {
@@ -154,23 +216,20 @@ input {
     pointer-events: none;
 }
 
-/* ---- Football players — absolutely positioned background element ---- */
+/* ---- Football players — absolutely positioned, shown via background-image ---- */
 .hero__players-layer {
     position: absolute;
     left: -20px;
     bottom: 0;
     width: 56%;
     max-width: 600px;
+    min-height: 420px;
     z-index: 1;
     pointer-events: none;
-}
-
-.hero__players-img {
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    object-position: bottom left;
+    background-image: url('assets/images/hero-football-players.png');
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: contain;
 }
 
 /* ---- Inner flex row ---- */
@@ -216,14 +275,6 @@ input {
     margin-bottom: 10px;
 }
 
-/* ---- Dynamic city name ---- */
-.hero__city {
-    font-family: 'MadeOuterSans', Arial, sans-serif;
-    font-weight: 700;
-    font-size: clamp(14px, 1.6vw, 18px);
-    color: #e53935;
-    text-transform: lowercase;
-}
 
 /* ---- Right column: form card ---- */
 .hero__form-col {
@@ -485,6 +536,17 @@ input {
     letter-spacing: 6px;
 }
 
+/* Logo wrapper inside polla card */
+.ecard__polla-logo {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
 .ecard__body {
     padding: 16px 14px 18px;
     display: flex;
@@ -495,7 +557,9 @@ input {
     justify-content: space-between;
 }
 
-.ecard__title {
+/* ecard__title y ecard__name son equivalentes (nombre en el HTML modificado) */
+.ecard__title,
+.ecard__name {
     font-family: 'MadeOuterSans', Arial, sans-serif;
     font-weight: 700;
     font-size: 14px;
@@ -710,10 +774,11 @@ input {
         position: relative;
         left: auto;
         bottom: auto;
-        width: 82%;
-        max-width: 400px;
+        width: 86%;
+        max-width: 420px;
+        min-height: 300px;
         margin: 0 auto;
-        display: block;
+        background-position: bottom center;
     }
 
     .hero__wrap {
@@ -804,6 +869,7 @@ input {
 
     .hero__players-layer {
         width: 95%;
+        min-height: 260px;
     }
 
     .hero__title {
